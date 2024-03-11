@@ -1,0 +1,5 @@
+class CSVrow():
+    def __init__(self,numcols):
+    
+        self.datrow = list(numcols)
+        self.rownum -
