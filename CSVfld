@@ -1,0 +1,10 @@
+class CSVfld:
+    def __init__(self, colold: int, colnew , newname=""):
+        # name of column in new database
+        self.newname = newname
+        # position of column in source database
+        self.posold = colold
+        # position in database to be created
+        self.posnew = colnew
+        # name of column in old database
+        self.oldname = ""
