@@ -1,0 +1,31 @@
+class CSVdate(CSVfld):
+    def __init__(self,colold,colnew,newname ):
+        super().__init__(colold,colnew,newname)
+        self.day = NAN
+        self.month = NAN
+        self.year = NAN
+        # store date at integer YYYYMMDD for sorting
+        self.dateint = NAN
+        self.newname = newname
+    def __str__(self):
+        retval = "newname: {self.newname} posold: {self.posnew} posnew: {self.posnew}"
+        return retval
+    def __repr__(self):
+        return "newname: {self.newname} dateint {self.dataint}"
+    def getoldname(self,thehead = ""):
+        self.oldname = thehead
+        return True
+    def getfld(self, thestr = ""):
+        if(thestr == ""):
+            return False
+        if(len(thestr) != 10):
+            return False
+        date_format = "%Y-%m-%d"
+        self.year = datetime.strptime(thestr,date_format).year
+        self.month = datetime.strptime(thestr,date_format).month
+        self.day = datetime.strptime(thestr,date_format).day
+        # used for sort
+        self.dateint = int(thestr.replace("-",""))
+        return True
+    def writeval(self):
+        return self.dateint
