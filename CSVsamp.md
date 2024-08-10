@@ -36,6 +36,8 @@ maxrow - last row of sample
 mincol - first column to be sampled
 maxcol - last column to be sample
 samprob - probability that and observation is saved 0 to 100 
+cumdict - columns in the sample region to collect data
+
 
 ### file related
 
@@ -77,6 +79,15 @@ needs to be saved.  This is performed by isInSamp routine
 ## cellSave 
 
 Contains some key logic
+
+## cumCell
+
+Some columns that are saved will also be cummulated, if there is a routine in cumCell.
+The default is for the dictionary to be empty.  To enable this feature an object must
+be created and then added to the dictionary. Once it is created, then it is added
+to the dictionary.
+
+
 
 
 ## CSVsampCell
